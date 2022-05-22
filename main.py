@@ -7,6 +7,7 @@ import time
 
 def updateobj(staticobjects, dynamicobjects):
     #window.fill((0,0,0))
+    #comment for traces
     for aaa in dynamicobjects:
         force = [0, 0]
         for aab in staticobjects+dynamicobjects:
