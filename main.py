@@ -53,9 +53,11 @@ if __name__ == '__main__':
     dynamicobjects.append(object(2, [600, 400], 5, [0, -0.03 - 0.0355], (255, 255, 0)))
     dynamicobjects.append(object(2, [800, 400], 5, [0, -0.03 + 0.0355], (255, 255, 0)))
     """
+    #Doppelstern statisch
     staticobjects.append(object(2, [300, 400], 20, [0, 0], (255, 255, 0)))
     staticobjects.append(object(2, [500, 400], 20, [0, 0], (255, 255, 0)))
     dynamicobjects.append(object(0.0006, [400, 700], 3, [0.045, 0], (0, 100, 100)))
+
     while(True):
         updateobj(staticobjects,dynamicobjects)
         #print(dynamicobjects[0].vel[1])
