@@ -21,7 +21,6 @@ def updateobj(staticobjects, dynamicobjects):
                 forcecur[1] += aab.mass * (aab.pos[1] - aaa.pos[1]) / math.pow(math.pow(aab.pos[0] - aaa.pos[0], 2) + math.pow(aab.pos[1] - aaa.pos[1], 2), 1.5)
         aaa.force = forcecur
         absolutforcesq = pow(forcecur[0], 2) + pow(forcecur[1], 2)
-        #print(absolutforcesq)
         if(absolutforcesq>highestforcesq):
             highestforcesq = absolutforcesq
     if(highestforcesq>pow(ACCURACY,2)):
@@ -35,7 +34,6 @@ def updateobj(staticobjects, dynamicobjects):
         aaa.vel[1] += aaa.force[1]*speed
         aaa.pos[0] += aaa.vel[0]*speed
         aaa.pos[1] += aaa.vel[1]*speed
-        #print(pow(pow(aaa.vel[0],2)+pow(aaa.vel[1],2),0.5))
         pygame.draw.circle(window, aaa.col, aaa.pos, aaa.size, 0)
 
     pygame.display.flip()
