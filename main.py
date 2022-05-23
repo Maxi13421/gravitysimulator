@@ -6,7 +6,7 @@ from pygame.locals import *
 import time
 
 ACCURACY = 1e-3
-SPEED = 2.0
+SPEED = 1.0
 
 def updateobj(staticobjects, dynamicobjects):
     window.fill((0,0,0))
@@ -56,18 +56,19 @@ if __name__ == '__main__':
 
     pygame.init()
     window = pygame.display.set_mode((800, 800))
-
+    """
     #Sonnensystem
     dynamicobjects.append(object(2,[400,400], 20, [0,0],(255,255,0)))
     dynamicobjects.append(object(0.0006, [400, 800], 10, [0.0707,0], (0, 100, 100)))
     dynamicobjects.append(object(0.000000, [400, 794], 3, [0.082, 0], (100, 100, 100)))
-
+    """
     """
     #Doppeldoppelsternsternsystem
     dynamicobjects.append(object(2,[000,400], 5, [0,0.06-0.071],(255,255,0)))
     dynamicobjects.append(object(2, [200, 400], 5, [0, 0.06+0.071], (255, 255, 0)))
     dynamicobjects.append(object(2, [600, 400], 5, [0, -0.06 - 0.071], (255, 255, 0)))
     dynamicobjects.append(object(2, [800, 400], 5, [0, -0.06 + 0.071], (255, 255, 0)))
+    #staticobjects.append(object(0.01, [100, 400], 3, [0.00, 0.00], (0, 100, 100)))
     """
     """
     #Doppelstern statisch
@@ -79,6 +80,14 @@ if __name__ == '__main__':
     staticobjects.append(object(2, [400, 400], 20, [0, 0], (255, 255, 0)))
     dynamicobjects.append(object(0.0006, [400, 700], 3, [0.01, 0], (0, 100, 100)))
     """
+
+    #gravitational catapult
+    staticobjects.append(object(2, [400, 400], 20, [0, 0], (255, 255, 0)))
+    dynamicobjects.append(object(0.1, [300, 400], 10, [0, 0.14], (0, 100, 100)))
+    dynamicobjects.append(object(0.1, [700, 400], 10, [0, -0.08], (0, 100, 100)))
+    dynamicobjects.append(object(0.00000001, [293, 400], 5, [0, -0.225], (100, 100, 100)))
+    #dynamicobjects.append(object(2, [600, 400], 5, [0, -0.06 - 0.071], (255, 255, 0)))
+    #dynamicobjects.append(object(2, [800, 400], 5, [0, -0.06 + 0.071], (255, 255, 0)))
 
     while(True):
         updateobj(staticobjects,dynamicobjects)
